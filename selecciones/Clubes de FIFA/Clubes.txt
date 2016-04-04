@@ -1,0 +1,373 @@
+
+ EUROPA
+	 
+Germany 1. Bundesliga
+  	 
+FC Nuremberg
+FC Bayern
+FSV Mainz 05
+FC Schalke 04
+1899 Hoffenheim
+Hamburger SV
+Bayer 04
+Hannover 96
+Bor. Dortmund
+Hertha BSC
+Bor. M'gladbach 
+SC Freiburg
+Braunschweig 
+VfB Stuttgart
+Eint. Frankfurt
+VfL Wolfsburg
+FC Augsburg 
+Werder Bremen
+  	 
+
+Germany 2. Bundesliga
+  	 
+FC K'lautern
+FC St. Pauli
+FC Köln
+FSV Frankfurt
+1860 Munich 
+Greuther Fürth
+Arm. Bielefeld
+Karlsruher SC
+Dynamo Dresden 
+SC Paderborn
+Energie Cottbus 
+SV Sandhausen
+Erzgebirge Aue
+Union Berlin
+F. Düsseldorf 
+VfL Bochum
+FC Ingolstadt 
+VfR Aalen
+  	 
+
+Holland Eredivisie
+  	 
+ADO Den Haag
+N.E.C.
+Ajax
+NAC Breda
+AZ 
+PEC Zwolle
+FC Groningen
+PSV
+FC Twente
+RKC Waalwijk
+FC Utrecht 
+Roda JC
+Feyenoord 
+SC Cambuur
+Go Ahead Eagles 
+sc Heerenveen
+Heracles Almelo
+Vitesse
+  	 
+Italy Serie A
+  	 
+Atalanta
+Lazio
+Bologna 
+Livorno
+Cagliari
+Milan
+Catania 
+Napoli
+Chievo Verona
+Parma
+Fiorentina 
+Roma
+Genoa
+Sampdoria
+Hellas Verona
+Sassuolo
+Inter
+Torino
+Juventus 
+Udinese
+  	 
+Italy Serie B
+  	 
+Brescia
+Latina
+Avellino 
+Modena
+Bari 
+Novara
+C. Stabia 
+Padua
+Carpi 
+Palermo
+Cesena
+Pescara
+Cittadella
+Reggio Calabria
+Crotone 
+Siena
+Empoli
+Terni
+La Spezia 
+Trapani
+Lanciano 
+Varese
+  	 
+Norway Tippeligaen
+  	 
+Aalesunds FK
+Sarpsborg
+FK Haugesund 
+SK Brann
+Hønefoss BK
+Sogndal
+Lillestrøm SK
+Start
+Molde FK 
+Strømsgodset IF
+ODD
+Tromsø IL
+Rosenborg BK
+Vålerenga
+Sandnes Ulf 
+Viking FK
+  	 
+Poland T-Mobile Ekstraklasa
+  	 
+Cracovia Kraków 
+Podbeskidzie
+Górnik Zabrze
+Pogo? Szczecin
+Jag. Bia?ystok 
+Ruch Chorzów
+Korona Kielce
+?l?sk Wroc?aw
+Lech Pozna? 
+Widzew ?ód?
+Lechia Gda?sk 
+Wis?a Kraków
+Legia Warszawa 
+Zag??bie Lubin
+Piast Gliwice 
+Zaw. Bydgoszcz
+  	 
+Portugal Liga ZON SAGRES
+  	 
+Académica 
+Paços Ferreira
+Belenenses (Belém) 
+Rio Ave FC
+CD Nacional
+S.C. Olhanense
+CS Marítimo(C. Funchal)
+SC Braga
+Estoril-Praia (Estoril)
+SL Benfica
+FC Arouca (Arouca)
+Sporting CP
+FC Porto 
+Vit. Guimarães
+Gil-Vicente (V. Barcelos)
+Vitória FC
+  	 
+Rep. Ireland Airtricity League
+  	 
+Bohemians FC
+Limerick
+Bray Wanderers
+Shamrock Rovers
+Cork City
+Shelbourne
+Derry City 
+Sligo Rovers
+Drogheda Utd
+St. Pats
+Dundalk 
+UCD AFC
+  	 
+Russia Premier League
+  	 
+Makhachkala
+Krylya Sovetov
+Amkar Perm 
+Kuban Krasnodar
+CSKA Moskva 
+Lokomotiv
+Dinamo Moskva 
+Rubin Kazan
+FC Krasnodar
+Spartak Moskva
+FC Rostov 
+Terek Grozny
+FC Tom Tomsk 
+Volga
+FC Ural
+Zenit
+  	 
+Scotland Premier League
+  	 
+Aberdeen 
+Kilmarnock
+Celtic
+Motherwell
+Dundee United
+Partick Thistle
+Hearts
+Ross County
+Hibernian 
+St. Johnstone
+Inverness CT
+St. Mirren
+  	 
+Spain Primera Division
+  	 
+Athletic Bilbao 
+Rayo Vallecano
+Atlético Madrid 
+RCD Espanyol
+CA Osasuna 
+Real Betis
+Celta Vigo
+Real Madrid
+Elche CF 
+Real Sociedad
+FC Barcelona
+Real Valladolid
+Getafe CF 
+Sevilla FC
+Granada CF 
+UD Almería
+Levante UD
+Valencia CF
+Málaga CF 
+Villarreal CF
+  	 
+Spain Segunda A
+  	 
+AD Alcorcón
+RC Recreativo
+CD Lugo
+RCD Mallorca
+CD Mirandés
+Real Jaén CF
+CD Numancia
+Real Murcia CF
+CD Tenerife
+Real Zaragoza
+Córdoba CF
+RM Castilla
+Deport. Alavés
+Sabadell FC
+FC Barcelona B
+SD Eibar
+Girona CF
+SD Ponferradina
+Hércules CF 
+Sporting Gijón
+RC Deportivo 
+UD Las Palmas
+  	 
+Sweden Allsvenskan
+  	 
+AIK Fotboll
+IF Elfsborg
+Åtvidabergs FF 
+IFK Göteborg
+BK Häcken 
+IFK Norrköping
+Brommapojkarna 
+Kalmar FF
+Djurgårdens IF 
+Malmö FF
+Gefle IF 
+Mjällby AIF 
+Halmstads BK
+Östers IF
+Helsingborgs IF
+Syrianska
+  	 
+Switzerland Super League
+  	 
+BSC Young Boys 
+FC Sion
+FC Aarau 
+FC St. Gallen
+FC Basel 
+FC Thun
+FC Lausanne
+FC Zürich
+FC Luzern 
+Grasshopper
+ 
+ASIA Y AUSTRALIA
+
+Hyundai A-League
+  	 
+Adelaide United 
+Newcastle Jets
+Brisbane Roar
+Perth Glory
+Central Coast
+Sydney FC
+Melb. Victory 
+Wanderers FC
+Melbourne Heart
+Well. Phoenix
+  	 
+Korea K League Classic
+  	 
+Busan I'Park 
+Incheon United
+Chunnam Dragons 
+Jeju United FC
+Daegu FC 
+Jeonbuk FC
+Daejeon Citizen 
+Pohang Steelers
+FC Seoul 
+Seongnam Ilhwa
+Gangwon FC
+Suwon Bluewings
+GyeongNam FC
+Ulsan Hyundai
+  	 
+Saudi Abdul Latif Jameel League
+  	 
+Al-Ahli 
+Al-Nassr
+Al-Ettifaq 
+Al-Orubah FC
+Al-Faisaly 
+Al-Raed
+Al-Fateh
+Al-Shabab
+Al-Hilal
+Alshoulla
+Al-Ittihad 
+Al-Taawoun
+Al-Nahdha
+Najran
+
+Resto del Mundo
+  	 
+adidas All-Star
+Olympiakos CFP
+AEK Athens
+Orlando Pirates
+Classic XI 
+Palmeiras
+FC Shakhtar 
+Panathinaikos
+Galatasaray SK 
+PAOK
+Independiente
+Rangers
+Kaizer Chiefs 
+World XI
+MLS All Stars 	
+
+ 
+
+ 
+
