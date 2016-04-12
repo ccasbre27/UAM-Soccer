@@ -5,8 +5,10 @@
  */
 package fifa14;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import javax.swing.*;
 /**
  *
@@ -447,25 +449,50 @@ GestionA gestion=new GestionA();
     }//GEN-LAST:event_btnGuardarImagenActionPerformed
 
     private void btnGuardarTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTextoActionPerformed
-        if(seleccionado.showDialog(null, "GUARDAR TEXTO")==JFileChooser.APPROVE_OPTION)
-        {
-            archivo=seleccionado.getSelectedFile();
-        }
-       if (archivo.getName().endsWith("txt")){
-           //String contenido= txtAreaTexto.getText();
-           String respuesta = gestion.GuardarATexto(archivo,"");
-           if(respuesta!=null){
-             JOptionPane.showMessageDialog(null, respuesta);
-           }else{
-               JOptionPane.showMessageDialog(null, "Error al guardar archivo");
-           }
-       }else{
-           JOptionPane.showMessageDialog(null, "El texto se debe guardar en archivo de texto");
-       }
-       gestion.getJugadores(cbxJugador.getSelectedItem().toString());//obtenga el item y lo convierta a String
-       gestion.getTipoTorneo(cboTipoTorneo.getSelectedItem().toString());//obtiene el item de lo seleccionado en tipo de torneo
-       gestion.mostrardatos();
+     
+        /*
+        String linea="";
+      String cantJug="";
+      String tipoTorneo="";
+      String TvsT="";
+              
+              try
+{//Se abre el archivo y se prepara el mismo para la escritura de lineas en el
+BufferedWriter bw=new BufferedWriter(new FileWriter("D:\\ArchivoTXT\\Agenda.txt"));
+//se extrae la cantidad de jugadores e informacion
+if(cbxJugador.isSelected())
+{
+    cantJug="Cantidad de Jugadores: ";
+}
+else if(cboTipoTorneo.isSelected())
+{
+    tipoTorneo="Tipo de Torneo: ";
+}
+else if(rbtnTvsT.isSelected())
+{
+    TvsT="Trabajo";
+}
+//se extrae la informacion ingresada mediante los textfield y se crea una sola linea de texto
+linea=txtNombre.getText()+" "+txtPrimerApellido.getText()+" "+txtSegApellido1.getText()+" "+txtNumerocont.getText()+" "+tipoNum+"\n";
+
+//se toma la variable "linea" que contiene toda la informacion digitada y se escribe en el archivo
+bw.write(linea);
+//se le indica al archivo de texto que se crea una nueva linea en blanco y queda listo para grgar mas informacion
+bw.newLine();
+//se cierra la coneccion con el archivo de texto
+bw.close();
+JOptionPane.showMessageDialog(null,"El archivo se ha guardado correctamente","Informacion",
+JOptionPane.INFORMATION_MESSAGE);
+}
+catch (Exception e)
+{
+    JOptionPane.showMessageDialog(null, "Se produjo el siguiente error en la generacion del archivo"+e,"Error",JOptionPane.INFORMATION_MESSAGE);
+}
+
+              */
     }//GEN-LAST:event_btnGuardarTextoActionPerformed
+
+    
 
     
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
