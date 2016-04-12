@@ -11,6 +11,7 @@ public abstract class Posiciones {
     Posiciones Gcontra;
     Posiciones Gdiferencia;
     Posiciones PtosObt;
+    boolean contains;
     
     //Insertamos el constructor
     public Posiciones(Posiciones Pjugados, Posiciones Pganados,Posiciones Pempatados, Posiciones Pperdidos, Posiciones Gfavor, Posiciones Gcontra, Posiciones Gdiferencia, Posiciones PtosObt){
@@ -98,5 +99,10 @@ public abstract class Posiciones {
     public abstract void IngresarPempatados (int Pempatados);
     public abstract void IngresarGfavor (int Gfavor);
     public abstract void IngresarGcontra (int Gcontra);
-    public abstract void CalcularPtosObt (int PtosObt);
+    public abstract int CalcularGdiferencia (int Gdiferencia);
+    public abstract int CalcularPtosObt (int PtosObt);
+
+    void add(int Pjugados) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
