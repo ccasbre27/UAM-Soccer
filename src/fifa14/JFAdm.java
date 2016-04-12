@@ -449,7 +449,11 @@ GestionA gestion=new GestionA();
     }//GEN-LAST:event_btnGuardarImagenActionPerformed
 
     private void btnGuardarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTorneoActionPerformed
-     
+
+        // establecer las propiedad tipotorneo, seleccionPrincipal, cantidadJugadores
+       //Principal.torneo.setTipoTorneo();
+        
+        
         /*
         String linea="";
       String cantJug="";
