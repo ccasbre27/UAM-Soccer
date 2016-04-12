@@ -6,6 +6,7 @@ public class Equipo {
     //se crean las variables
     private int id;
     private String nombre;
+    private String alias;
     private int golesFavor;
     private int golesContra;
     private int golesDif;
@@ -15,7 +16,7 @@ public class Equipo {
     private int partEmpatados;
     private int puntosObt;
     //Se crea el constructor con sus parametros
-    public Equipo(int id, String nombre, int golesFavor, int golesContra, int golesDif, int partJugados, int partGanados, int partPerdidos, int partEmpatados, int puntosObt) {
+    public Equipo(int id, String nombre,String alias, int golesFavor, int golesContra, int golesDif, int partJugados, int partGanados, int partPerdidos, int partEmpatados, int puntosObt) {
     }
     
     
@@ -34,6 +35,14 @@ public class Equipo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+        public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     public int getGolesFavor() {
@@ -99,6 +108,10 @@ public class Equipo {
     public void setPuntosObt(int puntosObt) {
         this.puntosObt = puntosObt;
     }
+
+
+    
+    
     
     
 }
