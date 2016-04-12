@@ -60,7 +60,7 @@ GestionA gestion=new GestionA();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        btnGuardarTexto = new javax.swing.JButton();
+        btnGuardarTorneo = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         lblImagen = new javax.swing.JLabel();
         btnGuardarImagen = new javax.swing.JButton();
@@ -233,10 +233,10 @@ GestionA gestion=new GestionA();
             }
         });
 
-        btnGuardarTexto.setText("Guardar ");
-        btnGuardarTexto.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarTorneo.setText("Guardar ");
+        btnGuardarTorneo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarTextoActionPerformed(evt);
+                btnGuardarTorneoActionPerformed(evt);
             }
         });
 
@@ -273,7 +273,7 @@ GestionA gestion=new GestionA();
                 .addGap(60, 60, 60)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardarTexto)
+                .addComponent(btnGuardarTorneo)
                 .addGap(55, 55, 55))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
@@ -299,7 +299,7 @@ GestionA gestion=new GestionA();
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(btnGuardarTexto)
+                    .addComponent(btnGuardarTorneo)
                     .addComponent(jButton1))
                 .addContainerGap())
         );
@@ -448,7 +448,7 @@ GestionA gestion=new GestionA();
  
     }//GEN-LAST:event_btnGuardarImagenActionPerformed
 
-    private void btnGuardarTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTextoActionPerformed
+    private void btnGuardarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTorneoActionPerformed
      
         /*
         String linea="";
@@ -490,7 +490,7 @@ catch (Exception e)
 }
 
               */
-    }//GEN-LAST:event_btnGuardarTextoActionPerformed
+    }//GEN-LAST:event_btnGuardarTorneoActionPerformed
 
     
 
@@ -644,7 +644,7 @@ catch (Exception e)
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbrirArchivo;
     private javax.swing.JButton btnGuardarImagen;
-    private javax.swing.JButton btnGuardarTexto;
+    private javax.swing.JButton btnGuardarTorneo;
     private javax.swing.JButton btnRegresar;
     public static javax.swing.JComboBox cboTipoTorneo;
     public static javax.swing.JComboBox cbxJugador;

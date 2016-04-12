@@ -1,59 +1,45 @@
 
 package fifa14;
 
-//public class Torneo extends Posiciones {
+public class Torneo 
+{
+    private int cantidadJugadores;
+    private int tipoTorneo;
+    private int tipoModalidad;
+    private int seleccionPrincipal;
 
-    public Torneo(Posiciones Pjugados, Posiciones Pganados, Posiciones Pempatados, Posiciones Pperdidos, Posiciones Gfavor, Posiciones Gcontra, Posiciones Gdiferencia, Posiciones PtosObt) {
-        super(Pjugados, Pganados, Pempatados, Pperdidos, Gfavor, Gcontra, Gdiferencia, PtosObt);
-    }
-//Extendemos a la clase padre Torneo e insertamos el constructor
-  //  @Override
-  //  public int IngresarPjugados(int Pjugados) {
-      //  int cont=0;
-        
-        //super.Pjugados.add(Pjugados);
-        
-        
+    public int getCantidadJugadores() {
+        return cantidadJugadores;
     }
 
-    @Override
-    public void IngresarPganados(int Pganados) {
-        super.Pganados.add(Pganados);
+    public void setCantidadJugadores(int cantidadJugadores) {
+        this.cantidadJugadores = cantidadJugadores;
     }
 
-    @Override
-    public void IngresarPperdidos(int Pperdidos) {
-        super.Pperdidos.add(Pperdidos);
+    public int getTipoTorneo() {
+        return tipoTorneo;
     }
 
-    @Override
-    public void IngresarPempatados(int Pempatados) {
-        super.Pempatados.add(Pempatados);
+    public void setTipoTorneo(int tipoTorneo) {
+        this.tipoTorneo = tipoTorneo;
     }
 
-    @Override
-    public void IngresarGfavor(int Gfavor) {
-        super.Gfavor.add(Gfavor);
+    public int getTipoModalidad() {
+        return tipoModalidad;
     }
 
-    @Override
-    public void IngresarGcontra(int Gcontra) {
-        super.Gcontra.add(Gcontra);
+    public void setTipoModalidad(int tipoModalidad) {
+        this.tipoModalidad = tipoModalidad;
+    }
+
+    public int getSeleccionPrincipal() {
+        return seleccionPrincipal;
+    }
+
+    public void setSeleccionPrincipal(int seleccionPrincipal) {
+        this.seleccionPrincipal = seleccionPrincipal;
     }
     
-   @Override
-    public int CalcularGdiferencia(int Gdiferencia){
-        int golDif=0;
-        
-        golDif= getGfavor()-getGcontra();
-        
-        return golDif;
-    }
-
-    @Override
-    public int CalcularPtosObt(int PtosObt) {
-       PtosObt= (Pganados*3)+(Pempatados * 1);
-       return PtosObt;
-    }
     
-}
+    
+}  
