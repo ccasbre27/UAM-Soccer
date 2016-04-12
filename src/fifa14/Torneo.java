@@ -54,22 +54,8 @@ public class Torneo
     // todos contra todos
     public void llenarTorneoTCT()
     {
-        Partido partido;
-        for (int i = 0; i < cantidadJugadores; i++) {
-            
-            for (int j = 0; j < cantidadJugadores; j++) {
-                
-                if (i != j) {
-                    
-                    // recibe el id equipo casa, visita,goles 
-                    partido = new Partido(i, j,0,0);
-                    
-                    partidos.add(partido);
-                }
-                
-            }
-            
-        }
+        
+      
     }
     
 }  
