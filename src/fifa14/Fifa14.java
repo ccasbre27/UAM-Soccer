@@ -8,7 +8,7 @@ public class Fifa14 {
     public static void main(String[] args)
     {
      
-        JFAdm jfga = new JFAdm();
+        Principal jfga = new Principal();
         jfga.setVisible(true);
         jfga.setLocationRelativeTo(null);
       

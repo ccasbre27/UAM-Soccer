@@ -1,6 +1,7 @@
 
 package fifa14;
 import java.io.*;//paquete que me permite trabajar con flujos de entrada y de salida
+import javax.swing.JOptionPane;
 
 public class GestionA
 {// creamos 3 variables
@@ -12,7 +13,9 @@ public class GestionA
     public GestionA()
     {
     }
-    
+    String modalidad="";
+    String jugador="";
+    String tipoTorneo="";
     //Creamos metodo para abrir un archivo de texto
     public String AbrirATexto(File archivo)//recibe un parametro de tipo file
     {
@@ -68,6 +71,21 @@ public class GestionA
         } catch (Exception e) {
         }
         return respuesta;
+    }
+    public void getModalidad(String radio){
+        modalidad=radio;
+    }
+    public void getJugadores(String boxJugador){
+        jugador=boxJugador;
+    }
+    public void getTipoTorneo(String boxTorneo){
+        tipoTorneo=boxTorneo;
+    }
+    
+    public void mostrardatos(){
+        JOptionPane.showMessageDialog(null,"La modalidad seleccionada es: "+modalidad);
+        JOptionPane.showMessageDialog(null,"La cantidad de jugadores seleccionada es de: "+jugador);
+        JOptionPane.showMessageDialog(null,"El tipo de torneo es: "+tipoTorneo);
     }
     
 }

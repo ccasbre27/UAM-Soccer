@@ -45,14 +45,14 @@ public class JFSeguimiento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(btnRegresar)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(532, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(btnRegresar)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(375, Short.MAX_VALUE))
         );
 
         pack();
