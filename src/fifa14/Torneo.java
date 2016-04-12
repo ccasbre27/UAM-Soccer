@@ -1,13 +1,24 @@
 
 package fifa14;
 
+import java.util.ArrayList;
+
 public class Torneo 
 {
     private int cantidadJugadores;
     private int tipoTorneo;
     private int tipoModalidad;
     private int seleccionPrincipal;
+    private ArrayList<Equipo> equipos;
+    private ArrayList<Partido> partidos;
 
+    public Torneo() {
+        
+        equipos = new ArrayList<Equipo>();
+        partidos = new ArrayList<Partido>();
+    }
+    
+   
     public int getCantidadJugadores() {
         return cantidadJugadores;
     }
@@ -40,6 +51,25 @@ public class Torneo
         this.seleccionPrincipal = seleccionPrincipal;
     }
     
-    
+    // todos contra todos
+    public void llenarTorneoTCT()
+    {
+        Partido partido;
+        for (int i = 0; i < cantidadJugadores; i++) {
+            
+            for (int j = 0; j < cantidadJugadores; j++) {
+                
+                if (i != j) {
+                    
+                    // recibe el id equipo casa, visita,goles 
+                    partido = new Partido(i, j,0,0);
+                    
+                    partidos.add(partido);
+                }
+                
+            }
+            
+        }
+    }
     
 }  
