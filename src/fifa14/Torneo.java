@@ -6,7 +6,7 @@ public class Torneo
     private int cantidadJugadores;
     private int tipoTorneo;
     private int tipoModalidad;
-    private int seleccionPrincipal;
+    private String seleccionPrincipal;
 
     public int getCantidadJugadores() {
         return cantidadJugadores;
@@ -32,11 +32,11 @@ public class Torneo
         this.tipoModalidad = tipoModalidad;
     }
 
-    public int getSeleccionPrincipal() {
+    public String getSeleccionPrincipal() {
         return seleccionPrincipal;
     }
 
-    public void setSeleccionPrincipal(int seleccionPrincipal) {
+    public void setSeleccionPrincipal(String seleccionPrincipal) {
         this.seleccionPrincipal = seleccionPrincipal;
     }
     

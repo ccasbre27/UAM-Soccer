@@ -451,9 +451,27 @@ GestionA gestion=new GestionA();
     private void btnGuardarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTorneoActionPerformed
 
         // establecer las propiedad tipotorneo, seleccionPrincipal, cantidadJugadores
-       //Principal.torneo.setTipoTorneo();
+        //Creo una variable y la convierto en Entero
+       int cantidadJugadores = Integer.parseInt(cbxJugador.getSelectedItem().toString());
+       Principal.torneo.setCantidadJugadores(cantidadJugadores);
+       
+       cboTipoTorneo.getSelectedIndex();//Obtengo la seleccion del tipo de torneo
+       //Guardo ese item en setTipoTorneo
+       Principal.torneo.setTipoTorneo(cboTipoTorneo.getSelectedIndex());
         
-        
+       lstItems.getSelectedValue().toString();
+       Principal.torneo.setSeleccionPrincipal(lstItems.getSelectedValue().toString());
+       
+       if(rbtnTvsT.isSelected()){//si está seleccionado
+           Principal.torneo.setTipoModalidad(0);//aqui establecemos el tipo de modalidad todos vs todos
+       }
+       if(rbtnClasif.isSelected()){
+           Principal.torneo.setTipoModalidad(1);// modalidad Clasificacion
+       }
+       if(rbtnElimDirecta.isSelected()){
+           Principal.torneo.setTipoModalidad(2);// modalidad Eliminacion Directa
+       }
+       
         /*
         String linea="";
       String cantJug="";
