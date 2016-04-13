@@ -10,13 +10,15 @@ public class Torneo
     private int tipoTorneo;
     private int tipoModalidad;
     private String seleccionPrincipal;
-    private ArrayList<Equipo> equipos;
-    private ArrayList<Partido> partidos;
+    
+    //creamos un array list para guardar cada equipo global
+    public static ArrayList<Equipo> equipos = new ArrayList<Equipo>();
+    
+    public static ArrayList<Partido> partidos = new ArrayList<Partido>();
 
     public Torneo() {
         
-        equipos = new ArrayList<Equipo>();
-        partidos = new ArrayList<Partido>();
+   
     }
     
    
@@ -63,6 +65,27 @@ public class Torneo
             }
         }
     
+    }
+    
+    public boolean VerificarEquipo(String nombreEquipo)
+    {
+        String nombreEquArray;//guarde el nombre del equipo en cada posicion del arraylist
+        for(int pos=0; pos< equipos.size(); pos++){// recorra el tamaño del array
+            
+            nombreEquArray=equipos.get(pos).getNombre();//Obtiene la posicion de nombre
+           if(nombreEquipo.equalsIgnoreCase(nombreEquArray)) // si es igual al del array
+           {
+               return true;
+           }
+        }
+        return false;
+        
+    }
+    
+    //eliminacion directa
+    public void llenarTorneoElimDirecta()
+    {
+        
     }
     
     

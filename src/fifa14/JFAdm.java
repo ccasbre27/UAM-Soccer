@@ -9,7 +9,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Cristina Hernández
@@ -18,14 +21,27 @@ public class JFAdm extends javax.swing.JFrame {
 JFileChooser seleccionado= new JFileChooser();
 File archivo;// un fichero
 byte[] bytesImg;
-int cantidadJugadoresAgregados = 0;
-
+Torneo torneo= new Torneo();
 GestionA gestion=new GestionA();
+
+      DefaultTableModel modeloTabla ;
+      // cada fila de la tabla
+      Vector fila = new Vector();
     /**
      * Creates new form JFAdm
      */
     public JFAdm() {
         initComponents();
+        
+        // se crea el modelo de la tabla
+        modeloTabla = new DefaultTableModel();
+        
+        // se crean las columnas
+        modeloTabla.addColumn("Jugador");
+        modeloTabla.addColumn("Selección");
+        
+        // se indica que la tabla va trabajar con este modelo
+        tblJugadoresAgregados.setModel(modeloTabla);
     }
 
     /**
@@ -207,6 +223,12 @@ GestionA gestion=new GestionA();
         jLabel10.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
         jLabel10.setText("Nombre del jugador");
 
+        txtNombreJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreJugadorActionPerformed(evt);
+            }
+        });
+
         btnAgregarJugador.setText("Agrega Jugador");
         btnAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,12 +243,10 @@ GestionA gestion=new GestionA();
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtNombreJugador)))
@@ -669,25 +689,65 @@ catch (Exception e)
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJugadorActionPerformed
-        // TODO add your handling code here:
-        
-        Equipo equipo = new Equipo();
-        equipo.setAlias(txtNombreJugador.getText());
-        equipo.setNombre(lstItems.getSelectedValue().toString());
-        
-        tblJugadoresAgregados.setValueAt(equipo.getAlias(), cantidadJugadoresAgregados, 0);
-        tblJugadoresAgregados.setValueAt(equipo.getNombre(), cantidadJugadoresAgregados, 1);
-        
-        int cantidadJugadoresSeleccionados = Integer.parseInt(cbxJugador.getSelectedItem().toString());
-        
-        cantidadJugadoresAgregados += 1;
-        
-        if(cantidadJugadoresAgregados == cantidadJugadoresSeleccionados )
-        {
-            btnAgregarJugador.setEnabled(false);
+        // TODO add your handling code here:0
+         
+      if(txtNombreJugador.getText().trim().length()==0)
+      {
+       JOptionPane.showMessageDialog(this, "El campo de texto Nombre está vacío");
+      }
+      else
+      {
+          
+          if(lstItems.getSelectedValue() == null){
+              JOptionPane.showMessageDialog(null, "Debe elegir un equipo o selección");
+          }
+          else {
+               
+            String equipoSeleccionado= lstItems.getSelectedValue().toString();
+            if(torneo.VerificarEquipo(equipoSeleccionado)){
+             JOptionPane.showMessageDialog(null, "Seleccione otro equipo");
+            }
+            else{
+
+               Equipo equipo = new Equipo();//clase de cada equipo con la informacion
+               equipo.setAlias(txtNombreJugador.getText());//se establece el nombre del jugador y se guarda en el objeto equipo
+               equipo.setNombre(equipoSeleccionado);// se establece la seleccion de la lista, devuelve un objeto y este se convierte a string 
+
+               // representación de nuestra fila
+               fila = new Vector();
+
+               // establecemos el nombre del jugador
+               fila.add(equipo.getAlias());
+
+                // establecemos el nombre del equipo
+               fila.add(equipo.getNombre());
+
+               // se agrega la fila
+               
+
+               //el primer parametro corresponde al valor digitado, el seg el numero de fila, el terc es la columna
+               int cantidadJugadoresSeleccionados = Integer.parseInt(cbxJugador.getSelectedItem().toString());
+
+               Torneo.equipos.add(equipo);//se envia el objto equipo
+
+               if(Torneo.equipos.size() == cantidadJugadoresSeleccionados )//si esta llena la tabla
+               {
+                   btnAgregarJugador.setEnabled(false);//desabilita el boton agregar.
+               }
+           }
         }
+      }
+         
+        
+         
         
     }//GEN-LAST:event_btnAgregarJugadorActionPerformed
+
+    private void txtNombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreJugadorActionPerformed
+        // TODO add your handling code here:
+        
+
+    }//GEN-LAST:event_txtNombreJugadorActionPerformed
 
     private void cargarArchivo(String nombreArchivo)
     {
