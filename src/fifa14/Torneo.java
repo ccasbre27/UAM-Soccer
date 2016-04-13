@@ -2,6 +2,7 @@
 package fifa14;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Torneo 
 {
@@ -54,8 +55,15 @@ public class Torneo
     // todos contra todos
     public void llenarTorneoTCT()
     {
-        
-      
+        for(int equiCasa=0; equiCasa<cantidadJugadores;equiCasa++){
+            for(int equiVisita=0;equiVisita<cantidadJugadores; equiVisita++ ){
+                if (equiCasa!=equiVisita){
+                    JOptionPane.showMessageDialog(null, equiCasa+" vs "+ equiVisita);
+                }
+            }
+        }
+    
     }
+    
     
 }  
