@@ -553,28 +553,44 @@ GestionA gestion=new GestionA();
 
     private void btnGuardarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTorneoActionPerformed
 
-        // establecer las propiedad tipotorneo, seleccionPrincipal, cantidadJugadores
-        //Creo una variable y la convierto en Entero
-       int cantidadJugadores = Integer.parseInt(cbxJugador.getSelectedItem().toString());
-       Principal.torneo.setCantidadJugadores(cantidadJugadores);
-       
-       cboTipoTorneo.getSelectedIndex();//Obtengo la seleccion del tipo de torneo
-       //Guardo ese item en setTipoTorneo
-       Principal.torneo.setTipoTorneo(cboTipoTorneo.getSelectedIndex());
+        // obtenemos la cantida de jugadores
+        int cantidadJugadores = Integer.parseInt(cbxJugador.getSelectedItem().toString());
         
-       lstItems.getSelectedValue().toString();
-       Principal.torneo.setSeleccionPrincipal(lstItems.getSelectedValue().toString());
-       
-       if(rbtnTvsT.isSelected()){//si está seleccionado
-           Principal.torneo.setTipoModalidad(0);//aqui establecemos el tipo de modalidad todos vs todos
-       }
-       if(rbtnClasif.isSelected()){
-           Principal.torneo.setTipoModalidad(1);// modalidad Clasificacion
-       }
-       if(rbtnElimDirecta.isSelected()){
-           Principal.torneo.setTipoModalidad(2);// modalidad Eliminacion Directa
-       }
-       
+        // se verifica que todos los equipos estén
+        if(Torneo.equipos.size() == cantidadJugadores)
+        {
+             Torneo torneo= new Torneo();
+            
+        
+            // establecer las propiedad tipotorneo, seleccionPrincipal, cantidadJugadores
+            //Creo una variable y la convierto en Entero
+           Torneo.cantidadJugadores  = cantidadJugadores;
+
+           cboTipoTorneo.getSelectedIndex();//Obtengo la seleccion del tipo de torneo
+           //Guardo ese item en setTipoTorneo
+           Torneo.tipoTorneo = cboTipoTorneo.getSelectedIndex();
+
+           lstItems.getSelectedValue().toString();
+           Torneo.seleccionPrincipal=lstItems.getSelectedValue().toString();
+
+           if(rbtnTvsT.isSelected()){//si está seleccionado
+           Torneo.tipoModalidad= 0;//aqui establecemos el tipo de modalidad todos vs todos
+               torneo.llenarTorneoTCT();
+           //    
+           }
+           if(rbtnClasif.isSelected()){
+           Torneo.tipoModalidad=1;// modalidad Clasificacion
+           }
+           if(rbtnElimDirecta.isSelected()){
+           Torneo.tipoModalidad=2; //modalidad Eliminacion Directa
+           }
+
+        }
+        
+       else
+        {
+                JOptionPane.showMessageDialog(null, "Todos los jugadores deben seleccionar un equipo");
+        }
        
         /*
         String linea="";
@@ -723,7 +739,7 @@ catch (Exception e)
                fila.add(equipo.getNombre());
 
                // se agrega la fila
-               
+               modeloTabla.addRow(fila);
 
                //el primer parametro corresponde al valor digitado, el seg el numero de fila, el terc es la columna
                int cantidadJugadoresSeleccionados = Integer.parseInt(cbxJugador.getSelectedItem().toString());

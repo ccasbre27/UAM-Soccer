@@ -11,13 +11,13 @@ package fifa14;
  */
 public class Principal extends javax.swing.JFrame {
 
-     public static Torneo torneo;
+
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
-        torneo = new Torneo();
+        
     }
 
     /**

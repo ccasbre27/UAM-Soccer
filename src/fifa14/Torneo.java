@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
 
 public class Torneo 
 {
-    private int cantidadJugadores;
-    private int tipoTorneo;
-    private int tipoModalidad;
-    private String seleccionPrincipal;
+    public static int cantidadJugadores;
+    public static int tipoTorneo;
+    public static int tipoModalidad;
+    public static String seleccionPrincipal;
     
     //creamos un array list para guardar cada equipo global
     public static ArrayList<Equipo> equipos = new ArrayList<Equipo>();
