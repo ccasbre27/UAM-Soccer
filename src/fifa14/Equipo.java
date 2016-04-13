@@ -18,6 +18,10 @@ public class Equipo {
     //Se crea el constructor con sus parametros
     public Equipo(int id, String nombre,String alias, int golesFavor, int golesContra, int golesDif, int partJugados, int partGanados, int partPerdidos, int partEmpatados, int puntosObt) {
     }
+
+    public Equipo() {
+       
+    }
     
     
     // se generan los metodos get y set
