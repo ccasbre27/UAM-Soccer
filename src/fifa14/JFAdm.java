@@ -555,6 +555,7 @@ GestionA gestion=new GestionA();
            Principal.torneo.setTipoModalidad(2);// modalidad Eliminacion Directa
        }
        
+       
         /*
         String linea="";
       String cantJug="";
