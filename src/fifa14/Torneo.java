@@ -13,7 +13,7 @@ public class Torneo
     
     //creamos un array list para guardar cada equipo global
     public static ArrayList<Equipo> equipos = new ArrayList<Equipo>();
-    
+                          //tipo
     public static ArrayList<Partido> partidos = new ArrayList<Partido>();
 
     public Torneo() {
@@ -60,8 +60,16 @@ public class Torneo
         for(int equiCasa=0; equiCasa<cantidadJugadores;equiCasa++){
             for(int equiVisita=0;equiVisita<cantidadJugadores; equiVisita++ ){
                 if (equiCasa!=equiVisita){
-                    JOptionPane.showMessageDialog(null, equiCasa+" vs "+ equiVisita);
+                    
+                    Equipo id= new Equipo();
+                    // obtener id equipo, acceder a arraylist de equipos.get
+                    id.getId();
+                    // agregar en arraylist de partidos, envía id equipo visita id equipo casa
+                    id.setId(equiCasa);
+                    id.setId(equiVisita);
+                  JOptionPane.showMessageDialog(null, equiCasa+" vs "+ equiVisita);
                 }
+                
             }
         }
     

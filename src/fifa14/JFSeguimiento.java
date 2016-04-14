@@ -5,8 +5,7 @@
  */
 package fifa14;
 
-import static fifa14.JFAdm.cboTipoTorneo;
-import static fifa14.JFAdm.cbxJugador;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import javax.swing.JFileChooser;
