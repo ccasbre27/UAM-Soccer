@@ -57,22 +57,28 @@ public class Torneo
     // todos contra todos
     public void llenarTorneoTCT()
     {
+        Partido partido = new Partido();
+        int idEquipoCasa;
+        int idEquipoVisita;
+        
         for(int equiCasa=0; equiCasa<cantidadJugadores;equiCasa++){
             for(int equiVisita=0;equiVisita<cantidadJugadores; equiVisita++ ){
                 if (equiCasa!=equiVisita){
                     
+                    // obtenemos el id del equipo casa
+                    idEquipoCasa = equipos.get(equiCasa).getId();
                     
-                    Equipo nuevoId= new Equipo();//creamos el objeto llamado nuevoId
+                    // obtenemos el id del equipo visita
+                    idEquipoVisita = equipos.get(equiVisita).getId();
                     
-                    // obtener id equipo, acceder a arraylist de equipos.get
-                   nuevoId.getId();
+                    // establecemos el equipo casa y visita en el objeto partido
+                    partido.setIdEquipoCasa(idEquipoCasa);
+                    partido.setIdEquipoVisita(idEquipoVisita);
                     
-                    // agregar en arraylist de partidos, envía id equipo visita id equipo casa
+                    // se agrega en el arraylist de partidos
+                    partidos.add(partido);
                     
-                   equipos.get(equiCasa).getNombre();
-                   equipos.get(equiVisita).getNombre();
-                   
-                    
+                     
                   JOptionPane.showMessageDialog(null, equipos.get(equiCasa).getNombre()+" vs "+equipos.get(equiVisita).getNombre());
                 }
                   
