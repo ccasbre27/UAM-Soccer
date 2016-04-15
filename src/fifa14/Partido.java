@@ -3,6 +3,10 @@ package fifa14;
 
 //clase que nos informa los resultados de cada equipo jugador
 public class Partido {
+
+    static Object get(int equiCasa) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     //creamos las variables
     private int idEquipoCasa;
     private int idEquipoVisita;
@@ -11,6 +15,8 @@ public class Partido {
 // se crea el constructor
     public Partido(int idEquipoCasa, int idEquipoVisita, int golesCasa, int golesVisita) {
     }
+
+    
 // los getters and setters
     public int getIdEquipoCasa() {
         return idEquipoCasa;

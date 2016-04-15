@@ -61,15 +61,21 @@ public class Torneo
             for(int equiVisita=0;equiVisita<cantidadJugadores; equiVisita++ ){
                 if (equiCasa!=equiVisita){
                     
-                    Equipo id= new Equipo();
+                    
+                    Equipo nuevoId= new Equipo();//creamos el objeto llamado nuevoId
+                    
                     // obtener id equipo, acceder a arraylist de equipos.get
-                    id.getId();
+                   nuevoId.getId();
+                    
                     // agregar en arraylist de partidos, envía id equipo visita id equipo casa
-                    id.setId(equiCasa);
-                    id.setId(equiVisita);
-                  JOptionPane.showMessageDialog(null, equiCasa+" vs "+ equiVisita);
+                    
+                   equipos.get(equiCasa).getNombre();
+                   equipos.get(equiVisita).getNombre();
+                   
+                    
+                  JOptionPane.showMessageDialog(null, equipos.get(equiCasa).getNombre()+" vs "+equipos.get(equiVisita).getNombre());
                 }
-                
+                  
             }
         }
     
@@ -93,7 +99,15 @@ public class Torneo
     //eliminacion directa
     public void llenarTorneoElimDirecta()
     {
-        
+        String nombreEqu;
+        for(int pos=0; pos<equipos.size();pos++){
+            nombreEqu= equipos.get(pos).getNombre();
+            if(nombreEqu.equalsIgnoreCase(nombreEqu)){
+                
+            }else{
+                
+            }
+        }
     }
     
     

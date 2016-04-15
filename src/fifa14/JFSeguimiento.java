@@ -184,9 +184,8 @@ public class JFSeguimiento extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtPGanados, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtPEmpatados, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(txtPtosObt)))
+                    .addComponent(txtPEmpatados, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(txtPtosObt))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -288,9 +287,9 @@ public class JFSeguimiento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(161, 161, 161)
                         .addComponent(btnPromedio)
-                        .addGap(126, 126, 126)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -409,8 +408,8 @@ public class JFSeguimiento extends javax.swing.JFrame {
     private void btnPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioActionPerformed
         // creamos las variables
         String nombre="";
-        int goles=0;
-        int gcontra=0;
+        int golesCasa=0;
+        int golesVisita=0;
         int pjugados=0;
         int pganados=0;
         int pperdidos=0;
@@ -420,25 +419,25 @@ public class JFSeguimiento extends javax.swing.JFrame {
        // int cont=0;
         
         //convertimos los campos de texto digitados a tipo int
-        goles= Integer.parseInt(txtGFavor.getText());
-        gcontra= Integer.parseInt(txtGContra.getText());
+        golesCasa= Integer.parseInt(txtGFavor.getText());
+        golesVisita= Integer.parseInt(txtGContra.getText());
         {
-            if (goles>gcontra){
-                pganados=pganados+1;
-                pperdidos=pperdidos+1;
-                pempatados=pempatados+1;
+            if (golesCasa>golesVisita){
+                pganados=pganados++;
+                pperdidos=pperdidos+0;
+                pempatados=pempatados+0;
                 pjugados=pjugados+1;
-                gdiferencia=goles-gcontra;
+                gdiferencia=golesCasa-golesVisita;
                 ptos= (pganados*3)+(pempatados*1);
                 
                 
             }
-            if(goles==gcontra){
+            if(golesCasa==golesVisita){
                 pganados=pganados+0;
                 pperdidos=pperdidos+0;
                 pempatados=pempatados+1;
                 pjugados=pjugados+1;
-                gdiferencia=goles-gcontra;
+                gdiferencia=golesCasa-golesVisita;
                 ptos= (pganados*3)+(pempatados*1);
                 
             }
@@ -447,7 +446,7 @@ public class JFSeguimiento extends javax.swing.JFrame {
                 pperdidos=pperdidos+1;
                 pempatados=pempatados+0;
                 pjugados=pjugados+1;
-                gdiferencia=goles-gcontra;
+                gdiferencia=golesCasa-golesVisita;
                 ptos= (pganados*3)+(pempatados*1);
                 
                         

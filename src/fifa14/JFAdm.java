@@ -4,13 +4,17 @@
  * and open the template in the editor.
  */
 package fifa14;
+import static fifa14.Torneo.equipos;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -66,7 +70,7 @@ GestionA gestion=new GestionA();
         cbxJugador = new javax.swing.JComboBox();
         cboTipoTorneo = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        jlbSeleccionModalidad = new javax.swing.JLabel();
         rbtnTvsT = new javax.swing.JRadioButton();
         rbtnClasif = new javax.swing.JRadioButton();
         rbtnElimDirecta = new javax.swing.JRadioButton();
@@ -79,8 +83,8 @@ GestionA gestion=new GestionA();
         jLabel10 = new javax.swing.JLabel();
         txtNombreJugador = new javax.swing.JTextField();
         btnAgregarJugador = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         btnGuardarTorneo = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -133,8 +137,8 @@ GestionA gestion=new GestionA();
         jPanel4.setBackground(new java.awt.Color(255, 255, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("Seleccione la modalidad:");
+        jlbSeleccionModalidad.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jlbSeleccionModalidad.setText("Seleccione la modalidad:");
 
         modalidad.add(rbtnTvsT);
         rbtnTvsT.setText("Todos vs Todos");
@@ -176,7 +180,7 @@ GestionA gestion=new GestionA();
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7)
+                .addComponent(jlbSeleccionModalidad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
                 .addComponent(rbtnTvsT)
                 .addGap(18, 18, 18)
@@ -190,7 +194,7 @@ GestionA gestion=new GestionA();
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(jlbSeleccionModalidad)
                     .addComponent(rbtnTvsT)
                     .addComponent(rbtnClasif)
                     .addComponent(rbtnElimDirecta))
@@ -266,17 +270,17 @@ GestionA gestion=new GestionA();
                 .addGap(22, 22, 22))
         );
 
-        jButton1.setText("Editar Torneo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setText("Editar Torneo");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Eliminar Torneo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setText("Eliminar Torneo");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
@@ -289,6 +293,7 @@ GestionA gestion=new GestionA();
 
         jLabel11.setText("Jugadores agregados");
 
+        tblJugadoresAgregados.setBackground(new java.awt.Color(153, 255, 204));
         tblJugadoresAgregados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -328,9 +333,9 @@ GestionA gestion=new GestionA();
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -365,10 +370,10 @@ GestionA gestion=new GestionA();
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jButton1)
+                        .addComponent(btnEditar)
                         .addGap(150, 150, 150)
-                        .addComponent(jButton2)
-                        .addGap(127, 127, 127)
+                        .addComponent(btnEliminar)
+                        .addGap(124, 124, 124)
                         .addComponent(btnGuardarTorneo)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
@@ -393,8 +398,8 @@ GestionA gestion=new GestionA();
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarTorneo)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnEditar)
+                    .addComponent(btnEliminar))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
 
@@ -411,18 +416,17 @@ GestionA gestion=new GestionA();
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(btnRegresar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnRegresar)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -431,13 +435,10 @@ GestionA gestion=new GestionA();
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnRegresar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegresar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -476,14 +477,14 @@ GestionA gestion=new GestionA();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnGuardarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTorneoActionPerformed
-
+        String linea="";
         // obtenemos la cantida de jugadores
         int cantidadJugadores = Integer.parseInt(cbxJugador.getSelectedItem().toString());
 
         // se verifica que todos los equipos estén
         if(Torneo.equipos.size() == cantidadJugadores)
         {
-            Torneo torneo= new Torneo();
+            Torneo torneo= new Torneo();//se crea el objeto torneo de tipo Torneo
 
             // establecer las propiedad tipotorneo, seleccionPrincipal, cantidadJugadores
             //Creo una variable y la convierto en Entero
@@ -514,7 +515,37 @@ GestionA gestion=new GestionA();
         {
             JOptionPane.showMessageDialog(null, "Todos los jugadores deben seleccionar un equipo");
         }
-
+        
+        try{
+            //se abre el archivo y se prepara el mismo para la escritura de lineas en el BufferedWriter
+            BufferedWriter bw= new BufferedWriter(new FileWriter ("C:\\Users\\Isabel Cristina\\Desktop\\Torneos\\FIFA14.txt"));
+            
+            //se extrae la información
+            
+            Torneo.cantidadJugadores  = cantidadJugadores;
+            Torneo.tipoTorneo = cboTipoTorneo.getSelectedIndex();
+            Torneo.seleccionPrincipal=lstItems.getSelectedValue().toString();
+            
+            //se extrae la informacion ingresada mediante los textfield y demás botones se crea una sola linea de texto
+            linea= txtNombreJugador.getName()+" "+cantidadJugadores+" "+cboTipoTorneo.getSelectedIndex()+" "+lstItems.getSelectedValue().toString()+" "
+                    + " "+Torneo.tipoModalidad+" "+equipos;
+            
+            //se toma la variable "linea" que contiene toda la informacion digitada y se escribe en el archivo
+            bw.write(linea);
+            
+            //se le indica al archivo de texto que se crea una nueva linea en blanco y queda listo para agregar mas informacion
+            bw.newLine();
+            
+            //se cierra la coneccion con el archivo de texto
+            bw.close();
+            JOptionPane.showMessageDialog(null,"El archivo se ha guardado correctamente","INFORMACIÓN",
+                JOptionPane.INFORMATION_MESSAGE);
+                    
+            
+        
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(null, "Se produjo el siguiente error en la generacion del archivo"+ex,"Error",JOptionPane.INFORMATION_MESSAGE);
+    }
         /*
         String linea="";
         String cantJug="";
@@ -537,34 +568,30 @@ GestionA gestion=new GestionA();
             {
                 TvsT="Trabajo";
             }
-            //se extrae la informacion ingresada mediante los textfield y se crea una sola linea de texto
-            linea=txtNombre.getText()+" "+txtPrimerApellido.getText()+" "+txtSegApellido1.getText()+" "+txtNumerocont.getText()+" "+tipoNum+"\n";
-
-            //se toma la variable "linea" que contiene toda la informacion digitada y se escribe en el archivo
-            bw.write(linea);
-            //se le indica al archivo de texto que se crea una nueva linea en blanco y queda listo para grgar mas informacion
-            bw.newLine();
-            //se cierra la coneccion con el archivo de texto
-            bw.close();
-            JOptionPane.showMessageDialog(null,"El archivo se ha guardado correctamente","Informacion",
-                JOptionPane.INFORMATION_MESSAGE);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "Se produjo el siguiente error en la generacion del archivo"+e,"Error",JOptionPane.INFORMATION_MESSAGE);
-        }
+           
 
         */
     }//GEN-LAST:event_btnGuardarTorneoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        
+        /*
+        txtNombre.setText("");
+        txtGFavor.setText("");
+        txtGContra.setText("");
+        txtPJugados.setText("");
+        txtPGanados.setText("");
+        txtPPerdidos.setText("");
+        txtPEmpatados.setText("");
+        txtGDiferencia.setText("");
+        txtPtosObt.setText("");
+        */
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJugadorActionPerformed
         // TODO add your handling code here:0
@@ -754,12 +781,12 @@ GestionA gestion=new GestionA();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarJugador;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardarTorneo;
     private javax.swing.JButton btnRegresar;
     public static javax.swing.JComboBox cboTipoTorneo;
     public static javax.swing.JComboBox cbxJugador;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -768,7 +795,6 @@ GestionA gestion=new GestionA();
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -780,6 +806,7 @@ GestionA gestion=new GestionA();
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel jlbSeleccionModalidad;
     private javax.swing.JList lstItems;
     public static javax.swing.ButtonGroup modalidad;
     private javax.swing.JRadioButton rbtnClasif;
