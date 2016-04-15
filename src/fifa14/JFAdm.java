@@ -522,13 +522,10 @@ GestionA gestion=new GestionA();
             
             //se extrae la información
             
-            Torneo.cantidadJugadores  = cantidadJugadores;
-            Torneo.tipoTorneo = cboTipoTorneo.getSelectedIndex();
-            Torneo.seleccionPrincipal=lstItems.getSelectedValue().toString();
-            
             //se extrae la informacion ingresada mediante los textfield y demás botones se crea una sola linea de texto
-            linea= txtNombreJugador.getName()+" "+cantidadJugadores+" "+cboTipoTorneo.getSelectedIndex()+" "+lstItems.getSelectedValue().toString()+" "
-                    + " "+Torneo.tipoModalidad+" "+equipos;
+            linea= "Jugador:"+txtNombreJugador.getText()+" "+"Cantidad de jugadores:"+Torneo.cantidadJugadores+" "
+                    + " tipo de Torneo: "+Torneo.tipoTorneo+" "+"Tipo de modalidad: "+Torneo.tipoModalidad+" "
+                    + " "+"Selección o torneo: "+Torneo.seleccionPrincipal+" "+"Equipo: "+Torneo.equipos+" "+"Partidos: "+Torneo.partidos;
             
             //se toma la variable "linea" que contiene toda la informacion digitada y se escribe en el archivo
             bw.write(linea);
